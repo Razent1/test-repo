@@ -15,11 +15,12 @@ function vowels_counter(str) {
 }
 
 function consonats_counter(str) {
-    let v = str.match(/([^aeiou!,.])/gi);
+    let v = str.match(/([^aeiou!,.?])/gi);
     return v === null ? 0 : v.length;
 }
 
 function onStatisticsClicked(event) {
+
     let count_spaces = 0;
     for (const l of txt) {
         if (l === ' ') {
@@ -48,8 +49,7 @@ function onStatisticsClicked(event) {
  * @param {object} event - Event class
  */
 function onRemoveWordsClicked(event) {
-    let text = txt;
-    let words = text.split(' ');
+    let words = txt.split(' ');
 
     for (let i = 0; i < words.length; i++) {
         if (i % 2 === 0) {
